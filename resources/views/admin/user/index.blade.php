@@ -19,11 +19,6 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
             <th>tên</th>
             <th>email</th>
             <th>quyền hạn</th>
@@ -34,15 +29,13 @@
         <tbody>
           @foreach($users as $user)
           <tr>
-            <td>
-            	<label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label>
-            </td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <form action="{{route('user.update',$user->id)}}" method="post">
               @csrf
               <td>
             	<input type="number" name="power" value="{{$user->power}}">
+
             	<input type="submit"  class="btn btn-default" value="cập nhật">
               </td>
             </form>

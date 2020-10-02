@@ -12,11 +12,6 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
             <th>tên khách hàng</th>
             <th>email</th>
             <th>địa chỉ</th>
@@ -28,7 +23,6 @@
         <tbody>
           @foreach($customers as $customer)
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $customer->name }}</td>
             <td>{{ $customer->email }}</td>
             <td>{{ $customer->address }}</td>
@@ -36,11 +30,11 @@
             <td>{{ $customer->updated_at }}</td>
 
             <td>
-              <a class="btn btn-default" href="{{route('customer.showBill',$customer->id)}}" class="active" ui-toggle-class="">xem đơn hàng<i class="fa fa-check text-success text-active"></i>
+              <a class="btn btn-default" href="{{route('customer.showBill',$customer->id)}}" class="active" ui-toggle-class="">xem đơn hàng
             </td>
             <td>
 	            <form action="" method="">
-	                <button class="btn btn-default">delete<i class="fa fa-times text-danger text"></i></a></button>
+	                <button class="btn btn-default"><i class="fa fa-times text-danger text"></i></a></button>
 	            </form>
             </td>
           </tr>

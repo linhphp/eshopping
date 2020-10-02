@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 // ----------------admin-------------------------------
+Route::get('quan-tri-website','AdminController@get_signIn')->name('get_signIn.admin');
+Route::post('quan-tri-website','UserController@postSignIn')->name('post_signIn.admin');
+
 
 Route::get('home-admin','AdminController@index')->name('homeAdmin');
 
