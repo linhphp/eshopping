@@ -22,11 +22,6 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
             <th>tên sản phẩm</th>
             <th>số lượng</th>
             <th>đơn giá</th>
@@ -36,7 +31,6 @@
         <tbody>
           @foreach($billDetails as $billDetail)
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$billDetail->name}}</td>
             <td>{{$billDetail->quantity}}</td>
             <td>{{number_format($billDetail->promotion_price)}} VNĐ

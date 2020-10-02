@@ -11,7 +11,7 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                @if(Auth::check())
+                                @if((Auth::check()) && (Auth::user()->power == null))
                                     <span style="color: #e63334; text-transform: uppercase;" >Chào bạn - {{Auth::user()->name}}</span>
                                     <a href="{{route('signOut')}}">Sign out</a>
                                 @else
@@ -46,7 +46,7 @@
                     <div class="header__nav__option">
                         <span class="search-switch"><img src="frontend/img/icon/search.png" alt=""></span>
                         <a href=""><img src="frontend/img/icon/heart.png" alt=""></a>
-                        @if(Auth::check()) 
+                        @if((Auth::check()) && (Auth::user()->power == null)) 
                         <a href="{{route('cart.check')}}" class="text-dark"><i class="fas fa-luggage-cart"></i></a>
                         @endif
                         <a href="{{route('showCart')}}"><img src="frontend/img/icon/cart.png" alt=""> <span>0</span></a>
