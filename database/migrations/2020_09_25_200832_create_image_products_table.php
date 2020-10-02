@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImagesTable extends Migration
+class CreateImageProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('image_products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pro_image_id');
-            $table->unsignedBigInteger('news_image_id');
-            $table->foreign('pro_image_id')->references('id')->on('products');
-            $table->foreign('news_image_id')->references('id')->on('news');
+            $table->unsignedBigInteger('product_id');
+            $table->text('image');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->softDeletes('deleted_at', 0);
             
             $table->timestamps();

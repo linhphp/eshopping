@@ -10,4 +10,7 @@ class AdminController extends Controller
     public function index(){
     	return view('admin.home.admin');
     }
+    public function add(){
+    	
+    }
 }
