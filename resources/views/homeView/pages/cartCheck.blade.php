@@ -24,16 +24,18 @@
     <section class="shopping-cart spad">
         <div class="container">
         	<div class="row">
-        		<div class="col-12 ">
-            		<p class="text-dark">Tên khách hàng: <span class="font-weight-bold">{{$customer->name}}</span></p>
-            		<p class="text-dark">số điện thoại: <span class="font-weight-bold">{{$customer->phone}}</span></p>
-            		<p class="text-dark">địa chỉ: <span class="font-weight-bold">{{$customer->address}}</span></p>
+        		<div class="col-12 bg-light mb-3">
+                    <div class="info">
+                		<p class="text-dark">Tên khách hàng: <span class="font-weight-bold">{{$customer->name}}</span></p>
+                		<p class="text-dark">số điện thoại: <span class="font-weight-bold">{{$customer->phone}}</span></p>
+                		<p class="text-dark">địa chỉ: <span class="font-weight-bold">{{$customer->address}}</span></p>
+                    </div>
             	</div>
         	</div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shopping__cart__table">
-                        <table>
+                        <table class="d-table-cell">
                             <thead>
                                 <tr>
                                     <th>STT</th>
@@ -55,7 +57,7 @@
                                     <td class="cart__price">{{$bill['total_price']}} VNĐ</td>
                                     <td class="cart__price">{{$bill['note']}}</td>
                                     <td class="cart__price">{{$bill['status']}}</td>
-                                    <td class="cart__price text-danger">{{$bill['updated_at']}}</td>
+                                    <td class="cart__price text-danger">{{substr( $bill['created_at'],  0, 10)}}</td>
                                     <td class="cart__price"><a href="{{route('cart.show',$bill['id'])}}" class="text-secondary">chi tiết</a></td>
                                     <td class="cart__close">
                                     <form action="">

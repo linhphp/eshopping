@@ -12,11 +12,6 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
             <th>tên danh mục</th>
             <th>mô tả ngắn</th>
             <th>Date</th>
@@ -27,19 +22,18 @@
           @foreach($cates as $cate)
           <input type="hidden" value="{{ $cate->id }}">
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $cate->name }}</td>
             <td>{{ $cate->desc }}</td>
             <td>{{ $cate->created_at }}</td>
 
             <td>
-              <a class="btn btn-default" href="{{ route('danh-muc-san-pham.edit',$cate->id) }}" class="active" ui-toggle-class="">edit<i class="fa fa-check text-success text-active"></i>
+              <a class="btn btn-default" href="{{ route('danh-muc-san-pham.edit',$cate->id) }}" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i>
             </td>
             <td>
             	<form action="{{ route('danh-muc-san-pham.destroy',$cate->id) }}" method="post">
             		@method('DELETE')
             		@csrf
-            		<button class="btn btn-default">delete<i class="fa fa-times text-danger text"></i></a></button>
+            		<button class="btn btn-default"><i class="fa fa-times text-danger text"></i></a></button>
             	</form>
             </td>
           </tr>

@@ -22,36 +22,35 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
             <th>kiểu thanh toán</th>
             <th>tổng tiền</th>
             <th>ghi chú</th>
-            <th>trạng thái</th>
+            <th colspan="2" class="text-center">trạng thái</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           @foreach($bills as $bill)
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$bill['payment']}}</td>
             <td>{{$bill['total_price']}}</td>
             <form action="{{route('bill.update',$bill['id'])}}" method="post">
               @csrf
-            <td><input type="text" name="note" value="{{$bill['note']}}"></td>
-            <td>
-              <input type="text" name="status" value="{{$bill['status']}}">
-            <input type="submit"  class="btn btn-default" value="cập nhật">
+              <td>{{$bill['note']}}</td>
+              <td>
+                <select name="status" id="" class="form-control">
+                  <option value="{{$bill['status']}}">{{$bill['status']}}</option>
+                  <option value="Đang giao hàng">Đang giao hàng</option>
+                  <option value="Đã giao hàng">Đã giao hàng</option>
+                  <option value="Huỷ Bỏ">Huỷ bỏ</option>
+                </select>
+              </td>
+              <td><input type="submit"  class="btn btn-default" value="cập nhật"></td>
             </form>
-            </td>
 
             
             <td>
-              <a href="{{route('bill.detail',$bill['id'])}}" class="btn btn-default">chi tiết<i class="fa fa-check text-success text-active"></i></a>
+              <a href="{{route('bill.detail',$bill['id'])}}" class="btn btn-default">chi tiết</a>
             </td>
           </tr>
           @endforeach
