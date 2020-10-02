@@ -11,7 +11,8 @@ class BrandProduct extends Model
     protected $fillable = [
         'name', 'desc',
     ];
-    public function product_br(){
+    public function product_br()
+    {
     	return $this->hasMany('App\Product','brand_id','id');
     }
 }
