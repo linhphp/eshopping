@@ -86,10 +86,12 @@ class UserController extends Controller
         //
         $email = $request->email;
         $password = $request->pass;
-        $result = array('email' => $email, 'password' => $password);
-        if(Auth::attempt($result)){
-
-        // Authentication passed...
+        if(Auth::attempt(['email' => $email, 'password' => $password, 'power' => 1]))
+        {
+            return redirect()->route('homeAdmin');
+        }
+        elseif(Auth::attempt(['email' => $email, 'password' => $password, 'power' => null]))
+        {
             return redirect()->route('home');
         }
         else{

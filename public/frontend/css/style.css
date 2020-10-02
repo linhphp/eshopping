@@ -3400,6 +3400,9 @@ transition: 0.3s;
 .blog__details__text a{
 	color: darkred;
 }
+.info p{
+	font-size: 20px;
+}
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
