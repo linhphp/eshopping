@@ -13,4 +13,7 @@ class AdminController extends Controller
     public function add(){
     
     }
+    public function add(){
+    	
+    }
 }
