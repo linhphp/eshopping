@@ -44,6 +44,7 @@ class UserController extends Controller
         $data->name = $request->name;
         $data->email = $request->email;
         $data->password = Hash::make($request->pass);
+        // $data->power = $request->power;
         $data->save();
         return redirect()->back()->with('massege','Đăng ký thành công');
     }
