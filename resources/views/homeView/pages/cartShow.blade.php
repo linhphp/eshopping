@@ -49,11 +49,11 @@
                             	<?php $i++; ?>
                                 <tr>
                                     <td class="cart__price">{{$i}}</td>
-                                    <td class="cart__price">{{$billDetail['name_product']}}</td>
-                                    <td class="cart__price text-danger pl-5"> {{$billDetail['quantity']}}</td>
-                                    <td class="cart__price">{{number_format(($billDetail['price'])/($billDetail['quantity']))}}  VNĐ</td>
+                                    <td class="cart__price">{{$billDetail->name}}</td>
+                                    <td class="cart__price text-danger pl-5"> {{$billDetail->quantity}}</td>
+                                    <td class="cart__price">{{number_format(($billDetail->price)/($billDetail->quantity))}}  VNĐ</td>
 
-                                    <td class="cart__price">{{number_format($billDetail['price'])}} VNĐ</td>
+                                    <td class="cart__price">{{number_format($billDetail->price)}} VNĐ</td>
                                 </tr>
                                 @endforeach
                             </tbody>

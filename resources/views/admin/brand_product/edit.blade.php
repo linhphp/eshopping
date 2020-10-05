@@ -40,12 +40,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">mô tả ngắn</label>
-                        <div class="col-sm-6">
-                            <textarea type="text" name="desc" class="form-control">{{ $brand->desc }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-sm-3 control-label"></label>
                         <div class="col-sm-6">
                     <button class="btn btn-success" type="submit">lưu chỉnh sửa</button>

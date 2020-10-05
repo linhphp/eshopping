@@ -81,13 +81,13 @@ chi tiết | {{$product->name}}
                             <span> - 5 Reviews</span>
                         </div>
                         <h3>
-                        	@if($product->unit_price == $product->promotion_price)
-                        	{{number_format($product->unit_price)}} VNĐ
-                        	@else
-                        	
-                        	{{number_format($product->promotion_price)}} VNĐ
-                        	<span>{{number_format($product->unit_price)}} VNĐ</span>
-                        	@endif
+                            @if($product->unit_price == $product->promotion_price)
+                            {{number_format($product->unit_price)}} VNĐ
+                            @else
+                            
+                            {{number_format($product->promotion_price)}} VNĐ
+                            <span>{{number_format($product->unit_price)}} VNĐ</span>
+                            @endif
                         </h3>
                         <p>{{$product->desc}}</p>
                         
@@ -123,7 +123,7 @@ chi tiết | {{$product->name}}
                             </li>
                         </ul>
                         <div class="tab-content">
-                        	<!-- thong tin san pham -->
+                            <!-- thong tin san pham -->
                             <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                 <div class="product__details__tab__content">
                                     
@@ -158,41 +158,48 @@ chi tiết | {{$product->name}}
         <div class="row">
            @foreach($categoryProducts as $product)
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="product__item">
-		            <div class="product__item__pic set-bg" data-setbg="upload/product/{{$product['image']}}">
-                    @if($product['unit_price'] == $product['promotion_price'])
-	                    <span class="label">New</span>
-	                @else
-	                    <span class="label">Sale</span>
-	                @endif
-	             
-	                    <ul class="product__hover">
-	                        <li><a href="#"><img src="frontend/img/icon/heart.png" alt=""></a></li>
-	                        <li><a class="detail" href="{{route('shop.detail',$product['id'])}}"><i class="fa fa-info"></i> chi tiết</a></li>
-	                        
-	                    </ul>
-		            </div>
-		            <div class="product__item__text">
-		                <h6>{{$product['name']}}</h6>
-		                <a href="#" class="add-cart">thêm vào giỏ hàng</a>
-		                <div class="rating">
-		                    <i class="fa fa-star-o"></i>
-		                    <i class="fa fa-star-o"></i>
-		                    <i class="fa fa-star-o"></i>
-		                    <i class="fa fa-star-o"></i>
-		                    <i class="fa fa-star-o"></i>
-		                </div>
-                        	@if($product['unit_price'] == $product['promotion_price'])
-		                		<h5>{{number_format($product['unit_price'])}} VND</h5>
-		                	@else
-		                		<h5 style="text-decoration: line-through; color: darkred;">{{number_format($product['unit_price'])}} VND</h5>
-		                		<h5>{{number_format($product['promotion_price'])}} VND</h5>
+            <form action="{{route('addToCart')}}" method="post">
+                @csrf
+                    <input type="hidden" name="qty" value="1">
+                    <input type="hidden" name="pro_id" value="{{$product['id']}}">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="upload/product/{{$product['image']}}">
+                        
+                        @if($product['unit_price'] == $product['promotion_price'])
+                        <span class="label">New</span>
+                        
+                        @else
+                        <span class="label">Sale</span>
+                        
+                        @endif
+                        <ul class="product__hover">
+                            <li><a href="#"><img src="frontend/img/icon/heart.png" alt=""></a></li>
+                            <li><a class="detail" href="{{ route('shop.detail',$product['id'] )}}"><i class="fa fa-info"></i> chi tiết</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6>{{$product['name']}}</h6>
+                        <button class="add-cart">thêm vào giỏ hàng</button>
+                        <div class="rating">
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        @if($product['unit_price'] == $product['promotion_price'])
+                            <h5>{{number_format($product['unit_price'])}} VND</h5>
+                        @else
+                            <h5 style="text-decoration: line-through; color: darkred;">{{number_format($product['unit_price'])}} VND</h5>
+                            <h5>{{number_format($product['promotion_price'])}} VND</h5>
 
-		                	@endif
-		               
-			        </div>
-	            </div>
-        </div>
+                        @endif
+                       
+                    </div>
+                    </div>
+                </form>
+            </div>
         @endforeach
             
         </div>

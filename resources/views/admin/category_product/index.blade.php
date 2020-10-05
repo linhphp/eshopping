@@ -13,7 +13,6 @@
         <thead>
           <tr>
             <th>tên danh mục</th>
-            <th>mô tả ngắn</th>
             <th>Date</th>
             <th colspan="2" class="text-center">query</th>
           </tr>
@@ -23,7 +22,6 @@
           <input type="hidden" value="{{ $cate->id }}">
           <tr>
             <td>{{ $cate->name }}</td>
-            <td>{{ $cate->desc }}</td>
             <td>{{ $cate->created_at }}</td>
 
             <td>

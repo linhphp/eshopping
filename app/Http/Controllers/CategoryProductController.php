@@ -52,7 +52,6 @@ class CategoryProductController extends Controller
         CategoryProduct::create(
             [
                 'name' => $request->name,
-                'desc' => $request->desc
             ]
         );
         return redirect()->back()->with('massege','thêm danh mục thành công');
@@ -103,7 +102,6 @@ class CategoryProductController extends Controller
 
         $data = CategoryProduct::find($id);
         $data->name = $request->name;
-        $data->desc = $request->desc;
         $data->save();
         return redirect()->back()->with('massege','sửa danh mục thành công');
     }

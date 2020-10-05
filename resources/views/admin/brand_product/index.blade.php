@@ -13,7 +13,6 @@
         <thead>
           <tr>
             <th>tên thương hiệu</th>
-            <th>mô tả ngắn</th>
             <th>Date</th>
             <th colspan="2" class="text-center">query</th>
           </tr>
@@ -23,7 +22,6 @@
           {{-- <input type="hidden" value="{{ $brand->id }}"> --}}
           <tr>
             <td>{{ $brand->name }}</td>
-            <td>{{ $brand->desc }}</td>
             <td>{{ $brand->created_at }}</td>
 
             <td>
