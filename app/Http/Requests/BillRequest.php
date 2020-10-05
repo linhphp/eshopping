@@ -25,6 +25,8 @@ class BillRequest extends FormRequest
     {
         return [
             //
+            'payment' => 'required',
+            'note' => 'max:100'
         ];
     }
 }

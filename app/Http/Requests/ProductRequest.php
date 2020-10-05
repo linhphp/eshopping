@@ -25,6 +25,12 @@ class ProductRequest extends FormRequest
     {
         return [
             //
+            'name' =>'required|unique:products,name|min:5|max:255',
+            'unit_price' => 'required|alpha_num',
+            'promotion_price' => 'alpha_num',
+            'image' =>'required|image',
+            'desc' => 'required|min:10|max|255',
+            'content' => 'required|min:30'
         ];
     }
 }

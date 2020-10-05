@@ -25,6 +25,7 @@ class CatRequest extends FormRequest
     {
         return [
             //
+            'user_id' => 'required'
         ];
     }
 }

@@ -25,6 +25,7 @@ class ImageNewsRequest extends FormRequest
     {
         return [
             //
+            'image' => 'required|image'
         ];
     }
 }

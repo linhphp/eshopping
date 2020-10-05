@@ -25,6 +25,10 @@ class CustomerRequest extends FormRequest
     {
         return [
             //
+            'name' =>'required|min:2|max:50',
+            'email' => 'required|unique:customers,email|email|max:150',
+            'address' => 'required',
+            'phone' => 'required|min:10|max:12|alpha_num'
         ];
     }
 }

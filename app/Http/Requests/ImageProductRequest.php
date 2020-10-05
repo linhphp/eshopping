@@ -25,6 +25,7 @@ class ImageProductRequest extends FormRequest
     {
         return [
             //
+            'image' => 'required|image'
         ];
     }
 }

@@ -25,6 +25,7 @@ class NewsCategoryRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|unique:news_categories,name|min:5|max:200'
         ];
     }
 }
