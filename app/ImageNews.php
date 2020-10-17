@@ -5,19 +5,20 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class kindOfNews extends Model
+class ImageNews extends Model
 {
     //
     use SoftDeletes;
     
-    protected $table = 'kind_of_news';
+    protected $table = 'image_news';
 
     protected $fillable = [
-        'name',
+    	'news_id',
+        'image',
     ];
 
-    public function kindOfNews()
+    public function newsImage()
     {
-        return $this->hasMany('App\News', 'kindOfNews_id', 'id');
+        return $this->belongsTo('App\New', 'news_id', 'id');
     }
 }
