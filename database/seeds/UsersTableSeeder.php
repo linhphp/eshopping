@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -15,18 +16,20 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        DB::table('users')->insert([
-            'name'=>'Admin',
-            'email'=>'admin@gmail.com',
-            'password'=> hash::make('123456'),
+        User::create([
+            "name"=>"admin",
+            "email"=>"admin@gmail.com",
+            "password"=>bcrypt('123456')
+            
         ]);
         for($i=0;$i<5;$i++){
-            DB::table('users')->insert([
-                'name'=> $faker->name(),
-                'email'=> $faker->safeEmail(),
-                'password'=> hash::make('123456'),
-            ]);
-        }
+        $name =$faker->firstName();
+        $email =$faker->email(15);
+            User::create([
+                "name"=>$name,
+                "email"=>$email,
+                "password"=>bcrypt('123456')
+            ]);         
+        }    
     }
-   
 }

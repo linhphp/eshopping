@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\BrandProduct;
 
 class BrandTableSeeder extends Seeder
 {
@@ -14,20 +15,17 @@ class BrandTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('brand_products')->insert([
-            'name'=>'MacBook',
+        BrandProduct::create([
+            "name"=>"SamSung",
         ]);
-        DB::table('brand_products')->insert([
-            'name'=>'Dell',
+        BrandProduct::create([
+            "name"=>"HP",
         ]);
-        DB::table('brand_products')->insert([
-            'name'=>'Asus',
+        BrandProduct::create([
+            "name"=>"Dell",
         ]);
-        DB::table('brand_products')->insert([
-            'name'=>'Acer',
-        ]);
-        DB::table('brand_products')->insert([
-            'name'=>'HP',
+        BrandProduct::create([
+            "name"=>"Apple",
         ]);
     }
 }

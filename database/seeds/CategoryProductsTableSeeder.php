@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\CategoryProduct;
 
 class CategoryProductsTableSeeder extends Seeder
 {
@@ -12,17 +13,17 @@ class CategoryProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('category_products')->insert([
-            'name'=>'Điện thoại',
+        CategoryProduct::create([
+            "name"=>"Điện thoại",
         ]);
-        DB::table('category_products')->insert([
-            'name'=>'Laptop',
+        CategoryProduct::create([
+            "name"=>"Laptop",
         ]);
-        DB::table('category_products')->insert([
-            'name'=>'Tai nghe',
+        CategoryProduct::create([
+            "name"=>"Tai nghe",
         ]);
-        DB::table('category_products')->insert([
-            'name'=>'Chuột máy tính',
+        CategoryProduct::create([
+            "name"=>"Chuột máy tính",
         ]);
     }
 }
