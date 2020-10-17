@@ -78,6 +78,16 @@
 	                        <span>Login Page</span>
 	                    </a>
 	                </li>
+					<li class="sub-menu">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-book"></i>
+	                        <span>quản lý silder</span>
+	                    </a>
+	                    <ul class="sub">
+							<li><a href="{{ route('slider.index') }}">Hiển thị slider</a></li>
+							<li><a href="{{ route('slider.create') }}">Thêm slider</a></li>
+	                    </ul>
+	                </li>
 	            </ul>            </div>
 	        <!-- sidebar menu end-->
 	    </div>

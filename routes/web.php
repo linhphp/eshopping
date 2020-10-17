@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('quan-tri-website','AdminController@get_signIn')->name('get_signIn.admin');
 Route::post('quan-tri-website','UserController@postSignIn')->name('post_signIn.admin');
 
+//Slider
+Route::resource('slider','SliderController');
+
 
 Route::get('home-admin','AdminController@index')->name('homeAdmin');
 
@@ -84,3 +87,4 @@ Route::get('chi-tiet-don-hang/{id}.html','CartController@cartShow')->name('cart.
 //--------------------------phan trang thong tin - tin tuc--------------
 Route::get('tin-chi-tiet/{slug}.html','HomeController@blogDetail')->name('blog.detail');
 Route::get('tin-tuc','HomeController@blog')->name('blog.index');
+

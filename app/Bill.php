@@ -29,3 +29,4 @@ class Bill extends Model
     	return $this->belongsTo('App\Customer','customer_id','id');
     }
 }
+// :qw! 
