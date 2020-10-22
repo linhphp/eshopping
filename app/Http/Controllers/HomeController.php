@@ -16,8 +16,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $meta_desc = "Chuyên sản phẩm, phụ kiện chính hãng";
+        $meta_keywords = "Sản phẩm, phụ kiện điện tử";
+        $meta_title ="ThucLinh.shop";
+        $url_canonical = $request->url();
         //
         $news = NewsResource::collection(News::inRandomOrder()->Select('news.title','news.image','news.created_at','news.slug')->paginate(3));
 
@@ -26,7 +30,7 @@ class HomeController extends Controller
         // var_dump($news);        
         // echo '</pre>';
         $products = Product::paginate(8);
-        return view('homeView.index',compact('products','news'));
+        return view('homeView.index',compact('products','news','meta_desc','meta_keywords','meta_title','url_canonical'));
     }
     
     /**
@@ -131,4 +135,10 @@ class HomeController extends Controller
         $blogRelaed = Arr::shuffle($blogRelaed);
         return view('homeView.pages.blog.blogDetail',compact('blog','blogRelaed'));
     }
+    
+
+
 }
+
+
+

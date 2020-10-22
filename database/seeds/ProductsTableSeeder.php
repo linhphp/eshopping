@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder
             "brand_id"=>1,
             "name"=>"Samsung123",
             "unit_price"=>20000000,
-            "promotion_price"=>20000000*0.1,
+            "promotion_price"=>20000000-20000000*0.1,
             "image"=>"ip11.png",
             "desc"=>"hàng mới về",
             "content"=>"hàng mới về",

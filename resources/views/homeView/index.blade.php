@@ -15,7 +15,13 @@
 
 	@endif
     @include('homeView/layout/slide')
+	
 <section class="product spad mt-5">
+<div class="fb-share-button" data-href="http://127.0.0.1:8000/trang-chu"
+ data-layout="button_count" data-size="large"><a target="_blank"
+  href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+
+<div class="fb-like" data-href="{{$url_canonical}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
 	<div class="container">
 	    <div class="row">
 	        <div class="col-lg-12">
@@ -122,7 +128,7 @@
                 </div>
             </div>
             @endforeach
-           
+			<div class="fb-comments" data-href="{{$url_canonical}}" data-numposts="15" data-width=""></div>
            
         </div>
     </div>
